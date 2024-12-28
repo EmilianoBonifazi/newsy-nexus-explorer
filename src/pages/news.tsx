@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowRight, Globe, Network, Timeline, Layers, Search, Brain, ArrowRightCircle } from 'lucide-react';
 import Link from 'next/link';
 import HeroSection from '@/components/landing/HeroSection';
 import FeaturesSection from '@/components/landing/FeaturesSection';
@@ -18,19 +20,12 @@ const LandingPage = () => {
         <DemoSection />
         <Benefits />
         <div className="py-20 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Start?</h2>
-          <div className="space-x-4">
-            <Link href="/auth/login">
-              <Button size="lg" variant="outline">
-                Login
-              </Button>
-            </Link>
-            <Link href="/auth/register">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                Sign Up
-              </Button>
-            </Link>
-          </div>
+          <h2 className="text-3xl font-bold mb-6">Ready to Explore?</h2>
+          <Link href="/news">
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
+              Start Analyzing News <ArrowRight className="ml-2" />
+            </Button>
+          </Link>
         </div>
       </main>
       <Footer />
