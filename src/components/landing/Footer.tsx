@@ -1,6 +1,6 @@
 import React from 'react';
 import { Github, Twitter, Mail } from 'lucide-react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (

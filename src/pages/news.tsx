@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Globe, Network, Timeline, Layers, Search, Brain, ArrowRightCircle } from 'lucide-react';
-import Link from 'next/link';
+import { ArrowRight, Globe, Network, Clock, Layers, Search, Brain, ArrowRightCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import HeroSection from '@/components/landing/HeroSection';
 import FeaturesSection from '@/components/landing/FeaturesSection';
 import HowItWorks from '@/components/landing/HowItWorks';

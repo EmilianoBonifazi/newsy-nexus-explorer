@@ -1,12 +1,12 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Timeline, Network, Globe, Layers } from 'lucide-react';
+import { Clock, Network, Globe, Layers } from 'lucide-react';
 
 const features = [
   {
     title: "Timeline Navigation",
     description: "Navigate news across history and dimensions",
-    icon: Timeline,
+    icon: Clock,
   },
   {
     title: "Entity Linking",

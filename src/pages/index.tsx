@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import HeroSection from '@/components/landing/HeroSection';
 import FeaturesSection from '@/components/landing/FeaturesSection';
 import HowItWorks from '@/components/landing/HowItWorks';
@@ -20,12 +20,12 @@ const LandingPage = () => {
         <div className="py-20 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Start?</h2>
           <div className="space-x-4">
-            <Link href="/auth/login">
+            <Link to="/auth/login">
               <Button size="lg" variant="outline">
                 Login
               </Button>
             </Link>
-            <Link href="/auth/register">
+            <Link to="/auth/register">
               <Button size="lg" className="bg-primary hover:bg-primary/90">
                 Sign Up
               </Button>

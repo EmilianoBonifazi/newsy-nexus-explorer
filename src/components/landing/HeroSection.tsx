@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { Globe } from 'lucide-react';
 
 const HeroSection = () => {
@@ -13,7 +13,7 @@ const HeroSection = () => {
         <p className="text-xl text-muted-foreground mb-8">
           Discover news across timelines, connect entities, and analyze multidimensional insights with AI-powered analysis.
         </p>
-        <Link href="/news">
+        <Link to="/news">
           <Button size="lg" className="bg-primary hover:bg-primary/90">
             Get Started
           </Button>
