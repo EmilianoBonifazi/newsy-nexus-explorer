@@ -21,7 +21,7 @@ const LandingPage = () => {
         <Benefits />
         <div className="py-20 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Explore?</h2>
-          <Link href="/news">
+          <Link to="/news">
             <Button size="lg" className="bg-primary hover:bg-primary/90">
               Start Analyzing News <ArrowRight className="ml-2" />
             </Button>
