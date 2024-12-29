@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { ArrowRight, Brain, Filter, Map, PieChart, Tags } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Brain, Filter, Map, PieChart, Tags } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Footer from '@/components/landing/Footer';
 import { NewsItem, NewsFilter } from '@/types/news';
@@ -167,7 +167,15 @@ const NewsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <main className="container mx-auto px-4 py-8">
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex flex-col gap-4 mb-8">
+          <div className="flex items-center gap-4">
+            <Link to="/">
+              <Button variant="outline" size="sm" className="flex items-center gap-2">
+                <ArrowLeft className="h-4 w-4" />
+                Back to Home
+              </Button>
+            </Link>
+          </div>
           <h1 className="text-4xl font-bold">News Analysis Dashboard</h1>
         </div>
         
