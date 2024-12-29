@@ -1,34 +1,68 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { ArrowRight, Globe, Network, Clock, Layers, Search, Brain, ArrowRightCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import HeroSection from '@/components/landing/HeroSection';
-import FeaturesSection from '@/components/landing/FeaturesSection';
-import HowItWorks from '@/components/landing/HowItWorks';
-import DemoSection from '@/components/landing/DemoSection';
-import Benefits from '@/components/landing/Benefits';
 import Footer from '@/components/landing/Footer';
 
 const NewsPage = () => {
+  const newsItems = [
+    {
+      id: 'NEWS-001',
+      source: 'Reuters',
+      date: '1/20/2024',
+      title: 'Global Markets Show Signs of Recovery',
+      description: 'Major global markets showed strong signs of recovery today as investors respond positively to new economic data...',
+    },
+    {
+      id: 'NEWS-002',
+      source: 'BBC News',
+      date: '1/20/2024',
+      title: 'New AI Breakthrough in Climate Research',
+      description: 'Scientists have developed a new AI model that can predict climate patterns with unprecedented accuracy...',
+    },
+    {
+      id: 'NEWS-003',
+      source: 'The Guardian',
+      date: '1/20/2024',
+      title: 'Tech Giants Announce Collaboration on Privacy Standards',
+      description: 'Leading technology companies have joined forces to develop new privacy standards for user data protection...',
+    }
+  ];
+
   return (
-    <div className="min-h-screen">
-      <main className="container mx-auto px-4">
+    <div className="min-h-screen bg-background">
+      <main className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold mb-8">News Analysis Dashboard</h1>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Card className="p-6">
-            <h2 className="text-2xl font-semibold mb-4">Latest News</h2>
-            <p className="text-muted-foreground">Start exploring the latest news and analysis.</p>
-          </Card>
-          {/* Add more cards for different news sections */}
-        </div>
-        <div className="py-20 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Explore?</h2>
-          <Link to="/news">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Start Analyzing News <ArrowRight className="ml-2" />
-            </Button>
-          </Link>
+          {newsItems.map((item) => (
+            <Card key={item.id} className="flex flex-col h-full">
+              <CardHeader>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                  <span>{item.source}</span>
+                  <span>•</span>
+                  <span>{item.date}</span>
+                </div>
+                <CardTitle className="text-lg line-clamp-2">{item.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground text-sm line-clamp-3">
+                  {item.description}
+                </p>
+                <div className="flex gap-2 mt-4">
+                  <Button variant="outline" size="sm">
+                    <ArrowRight className="h-4 w-4 mr-2" />
+                    Read
+                  </Button>
+                  <Button variant="outline" size="sm">
+                    <Brain className="h-4 w-4 mr-2" />
+                    Analyze
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </main>
       <Footer />
