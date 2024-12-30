@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Brain, Filter, Map, PieChart, Tags } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from '@/components/landing/Footer';
 import { NewsItem, NewsFilter } from '@/types/news';
 
 const NewsPage = () => {
+  const navigate = useNavigate();
   const [activeView, setActiveView] = useState<'list' | 'map' | 'graph'>('list');
   const [filters, setFilters] = useState<NewsFilter>({
     regions: [],
@@ -48,6 +49,10 @@ const NewsPage = () => {
       sentiment: 'neutral'
     }
   ];
+
+  const handleAnalyze = (newsItem: NewsItem) => {
+    navigate('/analysis', { state: { newsItem } });
+  };
 
   const renderFilters = () => (
     <div className="bg-card p-4 rounded-lg mb-6 shadow-sm">
@@ -153,7 +158,7 @@ const NewsPage = () => {
                 <ArrowRight className="h-4 w-4 mr-2" />
                 Read
               </Button>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" onClick={() => handleAnalyze(item)}>
                 <Brain className="h-4 w-4 mr-2" />
                 Analyze
               </Button>
